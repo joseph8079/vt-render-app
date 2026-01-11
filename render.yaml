@@ -33,4 +33,3 @@ services:
 databases:
   - name: vt-postgres
     plan: free
-    
