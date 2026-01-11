@@ -21,11 +21,12 @@ services:
           name: vt-postgres
           property: connectionString
 
-  - type: static
+  - type: web
     name: vt-frontend
+    env: node
     rootDir: frontend
-    buildCommand: npm ci && npm run build
-    staticPublishPath: dist
+    buildCommand: npm ci && npm run build && npm i -g serve
+    startCommand: serve -s dist -l 10000
     envVars:
       - key: VITE_API_BASE_URL
         value: "https://vt-backend.onrender.com/api"
