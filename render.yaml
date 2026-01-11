@@ -32,4 +32,5 @@ services:
 
 databases:
   - name: vt-postgres
-    plan: starter
+    plan: free
+    
